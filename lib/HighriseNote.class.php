@@ -203,6 +203,9 @@
 			$xml .= '<subject-id>' . $this->getSubjectId() . "</subject-id>\n";
 			$xml .= '<subject-type>' . $this->getSubjectType() . "</subject-type>\n";
 			$xml .= '<visible-to>' . $this->getVisibleTo() . "</visible-to>\n";
+
+                        if ($this->created_at)
+                          $xml .= '<created-at type="datetime">' . $this->getCreatedAt() . "</created-at>\n";
 			
 			if (isset($this->title)) // Email
 				$xml .= '<title>' . $this->getTitle() . "</title>\n";
